@@ -8,6 +8,7 @@
         public Double MaxSalary { get; set; }
         public Double? Stockoption { get; set; }
         public Double? Yearsexp { get; set; }
+        public List<Candidate> Candidates { get; set; }
 
     }
 }

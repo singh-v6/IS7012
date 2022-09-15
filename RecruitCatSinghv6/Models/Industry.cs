@@ -7,6 +7,9 @@
         public bool? ITSector { get; set; }
         public Double AverageSalary { get; set; }
         public string ReqSkills { get; set; }
+        public List<Candidate> Candidates { get; set; }
+        public List<Company> Company { get; set; }
+
 
     }
 }

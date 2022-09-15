@@ -9,6 +9,8 @@
         public double MaxSal { get; set; }
         public DateTime OptionalStartDate { get; set; }
         public string Location { get; set; }
+        public List<Candidate> Candidate { get; set; }
+        public Industry Industry { get; set; }
 
     }
 }

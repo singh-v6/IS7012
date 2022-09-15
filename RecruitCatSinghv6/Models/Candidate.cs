@@ -9,6 +9,9 @@
         public DateTime OptionalStartDate { get; set; }
         public string Skills { get; set; }
         public string ContactInfo { get; set; }
+        public Company? Company { get; set; }
+        public JobTitle JobTitle { get; set; }
+        public Industry Industry { get; set; }
 
 
     }
