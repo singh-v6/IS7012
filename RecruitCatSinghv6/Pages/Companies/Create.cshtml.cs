@@ -21,17 +21,18 @@ namespace RecruitCatSinghv6.Pages.Companies
 
         public IActionResult OnGet()
         {
+        ViewData["IndustryID"] = new SelectList(_context.Industry, "Id", "Id");
             return Page();
         }
 
         [BindProperty]
-        public Company Company { get; set; } = default!;
+        public Company Company { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Company == null || Company == null)
+          if (!ModelState.IsValid)
             {
                 return Page();
             }

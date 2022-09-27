@@ -36,6 +36,7 @@ namespace RecruitCatSinghv6.Pages.Companies
                 return NotFound();
             }
             Company = company;
+           ViewData["IndustryID"] = new SelectList(_context.Industry, "Id", "Id");
             return Page();
         }
 
@@ -71,7 +72,7 @@ namespace RecruitCatSinghv6.Pages.Companies
 
         private bool CompanyExists(int id)
         {
-          return (_context.Company?.Any(e => e.Id == id)).GetValueOrDefault();
+          return _context.Company.Any(e => e.Id == id);
         }
     }
 }

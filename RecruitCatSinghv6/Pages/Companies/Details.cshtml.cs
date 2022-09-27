@@ -19,7 +19,7 @@ namespace RecruitCatSinghv6.Pages.Companies
             _context = context;
         }
 
-      public Company Company { get; set; } = default!; 
+      public Company Company { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,7 +28,7 @@ namespace RecruitCatSinghv6.Pages.Companies
                 return NotFound();
             }
 
-            var company = await _context.Company.FirstOrDefaultAsync(m => m.Id == id);
+            var company = await _context.Company.Include(x => x.Candidate).Include(x => x.Industry).FirstOrDefaultAsync(m => m.Id == id);
             if (company == null)
             {
                 return NotFound();

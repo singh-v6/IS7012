@@ -20,7 +20,7 @@ namespace RecruitCatSinghv6.Pages.Candidates
         }
 
         [BindProperty]
-      public Candidate Candidate { get; set; } = default!;
+      public Candidate Candidate { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

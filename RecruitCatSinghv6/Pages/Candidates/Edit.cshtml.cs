@@ -36,6 +36,9 @@ namespace RecruitCatSinghv6.Pages.Candidates
                 return NotFound();
             }
             Candidate = candidate;
+           ViewData["CompanyID"] = new SelectList(_context.Company, "Id", "Id");
+           ViewData["IndustryID"] = new SelectList(_context.Industry, "Id", "Id");
+           ViewData["JobID"] = new SelectList(_context.JobTitle, "Id", "Id");
             return Page();
         }
 
@@ -71,7 +74,7 @@ namespace RecruitCatSinghv6.Pages.Candidates
 
         private bool CandidateExists(int id)
         {
-          return (_context.Candidate?.Any(e => e.Id == id)).GetValueOrDefault();
+          return _context.Candidate.Any(e => e.Id == id);
         }
     }
 }

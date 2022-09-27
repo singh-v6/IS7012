@@ -5,9 +5,8 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Edit Candidate</h1>
 
-<h4>Candidate</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -43,6 +42,21 @@
                 <label asp-for="Candidate.ContactInfo" class="control-label"></label>
                 <input asp-for="Candidate.ContactInfo" class="form-control" />
                 <span asp-validation-for="Candidate.ContactInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.CompanyID" class="control-label"></label>
+                <select asp-for="Candidate.CompanyID" class="form-control" asp-items="ViewBag.CompanyID"></select>
+                <span asp-validation-for="Candidate.CompanyID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.JobID" class="control-label"></label>
+                <select asp-for="Candidate.JobID" class="form-control" asp-items="ViewBag.JobID"></select>
+                <span asp-validation-for="Candidate.JobID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Candidate.IndustryID" class="control-label"></label>
+                <select asp-for="Candidate.IndustryID" class="form-control" asp-items="ViewBag.IndustryID"></select>
+                <span asp-validation-for="Candidate.IndustryID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

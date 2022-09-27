@@ -25,7 +25,8 @@ namespace RecruitCatSinghv6.Pages.Companies
         {
             if (_context.Company != null)
             {
-                Company = await _context.Company.ToListAsync();
+                Company = await _context.Company
+                .Include(c => c.Industry).ToListAsync();
             }
         }
     }
