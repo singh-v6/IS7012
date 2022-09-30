@@ -21,9 +21,9 @@ namespace RecruitCatSinghv6.Pages.Candidates
 
         public IActionResult OnGet()
         {
-        ViewData["CompanyID"] = new SelectList(_context.Company, "Id", "Id");
-        ViewData["IndustryID"] = new SelectList(_context.Industry, "Id", "Id");
-        ViewData["JobID"] = new SelectList(_context.JobTitle, "Id", "Id");
+        ViewData["CompanyID"] = new SelectList(_context.Company, "Id", "CompanyName");
+        ViewData["IndustryID"] = new SelectList(_context.Industry, "Id", "IndustryName");
+        ViewData["JobID"] = new SelectList(_context.JobTitle, "Id", "Title");
             return Page();
         }
 
